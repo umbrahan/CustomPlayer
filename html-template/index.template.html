@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">	
+    <head>
+        <title>${title}</title>         
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		
+        <link rel="stylesheet" type="text/css" href="history/history.css" />
+        <script type="text/javascript" src="history/history.js"></script>
+
+		<script type="text/javascript" src="crazyplayer.js"></script>
+    </head>
+    
+    <body>
+		<h1>Crazyplayer H264 Pseudo-Streaming Demo</h1>
+        <div>
+        	<form>
+        	<input name="nseek" type="button" value="seek" onClick="player_seek(90)"> 
+        	<input name="nstop" type="button" value="stop" onClick="player_stop()"> 
+        	<input name="nplay" type="button" value="play" onClick="player_play()"> 
+        	</form>
+        </div>
+
+		<a style="display:block;width:640px;height:360px" id="player"></a>
+		<script type="text/javascript">
+			var player = $link("player", "${swf}.swf", 
+			{
+			  clip: 
+			  {
+			    url: 'http://connect.lige.cc:8888/flv.mp4',
+			    maskc: 0xabcdef,
+			    maska: 0.95,
+			    maskx: 0.8,
+			    masky: 0.01,
+			    maskw: 0.19,
+			    maskh: 0.11,
+			    provider: 'h264streaming',
+			    onSeek: function(clip, tt) 
+			    {
+			       	alert('onseek, ' + tt);
+			    }
+			  },
+			  debug: true,
+			  log: 
+			  {
+			    level: 'debug',
+			    trace: true
+			  },
+			  plugins: 
+			  {
+			  }
+			});
+			
+			function player_seek(param) 
+			{
+				player.seek(param);   
+			}   
+			
+			function player_play() 
+			{
+				player.play();   
+			}   
+			
+			function player_stop() 
+			{
+				player.stop();   
+			}   
+		</script>
+   </body>
+</html>

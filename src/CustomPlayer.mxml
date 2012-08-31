@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" minWidth="955" minHeight="600" 
+				xmlns:view="org.flowplayer.view.*" preloader="org.flowplayer.view.Preloader" 
+				backgroundColor="#FF0000" backgroundAlpha="0.0">
+	<!--view:FlowplayerComponent id="player" width="480" height="320">
+		
+	</view:FlowplayerComponent-->
+	<mx:Script>
+		<![CDATA[
+			
+		]]>
+	</mx:Script>
+</mx:Application>
